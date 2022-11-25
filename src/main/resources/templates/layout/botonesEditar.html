@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html  xmlns:th="http://www.thymeleaf.org"
+              xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/layout :: head">
+        <title>TODO supply a title</title>
+       </head>
+    <body>
+         <header th:replace="layout/layout :: header"></header>
+         <section th:fragment="botonesEditar">
+             <div id="actions" class="py-4 mb-4 bg-dark">
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-md-3">
+                             <a th:href="@{/}" class="btn btn-primary btn-block">
+                                 <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
+                             </a>
+                         </div>
+                         <div class="col-md-3">
+                             <button type="submit" class="btn btn-success btn-block">
+                                   <i class="fas fa-check"></i> [[#{accion.guardar}]]
+                             </button>
+                         </div>
+                          <div class="col-md-3">
+                              <a  th:href="@{/eliminar(id=${persona.id})} " class="btn btn-danger btn-block">
+                                   <i class="fas fa-trash"></i> [[#{accion.eliminar}]]
+                              </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+    </body>
+</html>
